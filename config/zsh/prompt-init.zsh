@@ -3,7 +3,7 @@ promptinit
 colors
 
 function zsh_prompt() {
-    echo '%F{red}%T%f | %F{yellow}%M%f | %F{green}%B%~%f%b'
+    echo '%F{red}%T%f | %F{blue}%n%f@%F{yellow}%M%f | %F{green}%B%~%f%b'
     echo -n '%{%(?.%K{green}.%K{red})%} %k %{%G%B%(!.%F{red}#%f.$)%b%}: '
 }
 
