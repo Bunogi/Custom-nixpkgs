@@ -1,5 +1,4 @@
-with import <nixpkgs> {};
-# { buildPythonPackage, curl, notify2, xclip, maim, slop}:
+{ python37Packages, curl, xclip, maim, slop }:
 
 let pyPkgs = python37Packages;
 in

@@ -1,4 +1,5 @@
-with import <nixpkgs> {};
+{ stdenv, symlinkJoin, dzen2, pamixer }:
+# with import <nixpkgs> {};
 
 # let joined = symlinkJoin {
 #       name = "volume-joined";
