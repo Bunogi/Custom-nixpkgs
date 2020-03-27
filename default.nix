@@ -5,7 +5,10 @@
     emacs = super.emacsPackages.emacsWithPackages (em: (with em;
       [ pdf-tools ]
     ));
+    botty = super.callPackage ./packages/botty {};
   };
+
+  services.botty = import ./services/botty;
 
   config = import ./config;
 
