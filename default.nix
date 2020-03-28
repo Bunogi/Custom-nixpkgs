@@ -6,9 +6,13 @@
       [ pdf-tools ]
     ));
     botty = super.callPackage ./packages/botty {};
+    monshot = super.callPackage ./packages/monshot {};
   };
 
-  services.botty = import ./services/botty;
+  services = {
+    botty = import ./services/botty;
+    monshot = import ./services/monshot;
+  };
 
   config = import ./config;
 
