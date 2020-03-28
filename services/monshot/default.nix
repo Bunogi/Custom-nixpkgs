@@ -55,8 +55,8 @@ in {
       };
 
       environment = {
-        ROCKET_ENV="development";
-        RUST_BACTRACE = "1";
+        ROCKET_ENV = "production";
+        RUST_BACKTRACE = "1";
       };
     };
 
