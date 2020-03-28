@@ -32,3 +32,5 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 bindkey -e
 
 stty stop "" -ixon -ixoff
+
+source __FZF__/share/fzf/key-bindings.zsh
