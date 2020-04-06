@@ -6,7 +6,7 @@ let
   nixpkgs = import (fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz) {
     overlays = [ moz_overlay ];
   };
-  nightly = nixpkgs.rustChannelOf { date = "2020-03-28"; channel = "nightly"; };
+  nightly = nixpkgs.rustChannelOf { date = "2020-04-06"; channel = "nightly"; };
 in
 with nixpkgs;
   rustPlatform.buildRustPackage.override {
