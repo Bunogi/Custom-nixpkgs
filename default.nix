@@ -4,6 +4,7 @@
     volume = super.callPackage ./packages/volume {};
     botty = super.callPackage ./packages/botty {};
     monshot = super.callPackage ./packages/monshot {};
+    qemu-irix = super.callPackage ./packages/qemu-irix {};
   };
 
   services = {
