@@ -1,11 +1,5 @@
-{ pkgs, config, ... }:
+{ hostColor, pkgs, ... }:
 
-let
-  hostColor = {
-    "zenix" = "yellow";
-    "bunogi.xyz" = "green";
-  }.${config.networking.hostName};
-in
 {
   users.defaultUserShell = pkgs.zsh;
 
