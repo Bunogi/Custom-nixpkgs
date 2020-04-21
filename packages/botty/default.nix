@@ -1,30 +1,16 @@
-{ stdenv, rustPlatform, openssl, pkgconfig, glib, cairo}:
+{ stdenv, pkgs, rustPlatform, openssl, pkgconfig, glib, cairo }:
 
-let
-  moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
-  nixpkgs = import <nixpkgs> {
-    overlays = [ moz_overlay ];
+rustPlatform.buildRustPackage rec {
+  name = "botty-${version}";
+  version = "0.1.0";
+
+  buildInputs = with pkgs; [openssl pkgconfig glib cairo];
+
+  src = builtins.fetchGit {
+    url = "https://git.bunogi.xyz/disastia/tg";
   };
-in
-  with nixpkgs;
-  rustPlatform.buildRustPackage.override {
-    rustc =
-      assert lib.strings.versionAtLeast (lib.strings.getVersion nixpkgs.latest.rustChannels.stable.rust) "1.39.0";
-      nixpkgs.latest.rustChannels.stable.rust;
 
-  } rec {
-    name = "botty-${version}";
-    version = "0.1.0";
+  cargoSha256 = "1vagq2dv3fqi5zagq16kmx5qda7k6lx0h1jskkrzc1q3gzwqhxyl";
 
-    buildInputs = [openssl pkgconfig glib cairo];
-
-    src = builtins.fetchGit {
-      url = "https://git.bunogi.xyz/disastia/tg";
-    };
-
-    cargoSha256 = "1ivffxr3srb9ny0g8za2nhgakcg2kk45cflwpjbr273qs6npb2q0";
-
-    # builder = ./builder.sh;
-
-    doCheck = false;
-  }
+  doCheck = false;
+}
