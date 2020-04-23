@@ -5,6 +5,7 @@
     botty = super.callPackage ./packages/botty {};
     monshot = super.callPackage ./packages/monshot {};
     qemu-irix = super.callPackage ./packages/qemu-irix {};
+    brightness = super.callPackage ./packages/brightness {};
   };
 
   services = {
