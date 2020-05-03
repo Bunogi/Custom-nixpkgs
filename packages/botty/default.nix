@@ -7,7 +7,7 @@ rustPlatform.buildRustPackage rec {
   buildInputs = with pkgs; [openssl pkgconfig glib cairo];
 
   src = builtins.fetchGit {
-    url = "https://git.bunogi.xyz/disastia/tg";
+    url = "https://git.dark.red/bunogi/tg";
   };
 
   cargoSha256 = "1vagq2dv3fqi5zagq16kmx5qda7k6lx0h1jskkrzc1q3gzwqhxyl";
