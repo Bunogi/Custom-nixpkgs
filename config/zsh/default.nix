@@ -19,6 +19,8 @@
     shellInit = ''
       # disable newuser setup
       zsh-newuser-install() {:;}
+      # Ensure .cargo/bin is in PATH
+      export PATH=$HOME/.cargo/bin:$PATH
     '';
 
     shellAliases = {
