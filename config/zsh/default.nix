@@ -21,6 +21,11 @@
       zsh-newuser-install() {:;}
       # Ensure .cargo/bin is in PATH
       export PATH=$HOME/.cargo/bin:$PATH
+      # Enable direnv if it's installed
+      direnv=$(direnv hook zsh)
+      if [[ $? -eq 0 ]]; then
+        eval $direnv
+      fi
     '';
 
     shellAliases = {
