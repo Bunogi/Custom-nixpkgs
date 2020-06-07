@@ -5,7 +5,7 @@ let
   nixpkgs = import <nixpkgs> {
     overlays = [ moz_overlay ];
   };
-  nightly = nixpkgs.rustChannelOf { date = "2020-05-03"; channel = "nightly"; };
+  nightly = nixpkgs.rustChannelOf { date = "2020-06-07"; channel = "nightly"; };
 in
 with nixpkgs;
   rustPlatform.buildRustPackage.override {
