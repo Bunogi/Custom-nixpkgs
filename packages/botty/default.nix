@@ -4,13 +4,15 @@ rustPlatform.buildRustPackage rec {
   name = "botty-${version}";
   version = "0.1.0";
 
-  buildInputs = with pkgs; [openssl pkgconfig glib cairo];
+  nativeBuildInputs = with pkgs; [ pkgconfig ];
+
+  buildInputs = with pkgs; [openssl glib cairo];
 
   src = builtins.fetchGit {
     url = "https://git.dark.red/bunogi/tg";
   };
 
-  cargoSha256 = "1vagq2dv3fqi5zagq16kmx5qda7k6lx0h1jskkrzc1q3gzwqhxyl";
+  cargoSha256 = "15slyjhi8x6rzybijh06ai22q2c7dpg58bmi5v8mvfi3m6zsh7bc";
 
   doCheck = false;
 }

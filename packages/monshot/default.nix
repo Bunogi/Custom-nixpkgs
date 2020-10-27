@@ -5,7 +5,7 @@ let
   nixpkgs = import <nixpkgs> {
     overlays = [ moz_overlay ];
   };
-  nightly = nixpkgs.rustChannelOf { date = "2020-07-16"; channel = "nightly"; };
+  nightly = nixpkgs.rustChannelOf { date = "2020-10-27"; channel = "nightly"; };
 in
 with nixpkgs;
   rustPlatform.buildRustPackage.override {
@@ -18,7 +18,7 @@ with nixpkgs;
       url = "https://git.dark.red/bunogi/monshot";
     };
 
-    cargoSha256 = "1g60inam68jbj46n8qz2flawjq52c1lrcfyq7ssixz9ir5dmb4pb";
+    cargoSha256 = "0v9xwjywmbxjhiiv76kix445fmyw20w1fkfpny9x1ijgbdigsn5l";
     
     postBuild = ''
       mkdir -p $out/assets
