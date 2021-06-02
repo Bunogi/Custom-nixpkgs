@@ -176,6 +176,7 @@ in
         group = "botty";
         createHome = true;
         home = cfg.workDir;
+        isSystemUser = true;
       };
     };
 
