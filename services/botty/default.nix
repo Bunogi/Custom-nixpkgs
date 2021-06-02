@@ -177,6 +177,7 @@ in
         createHome = true;
         home = cfg.workDir;
         isSystemUser = true;
+        isNormalUser = false;
       };
     };
 
